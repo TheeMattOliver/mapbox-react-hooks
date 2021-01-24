@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl'
 import './style.css';
 
 function App() {
-  
+
   const [lng, setLng] = useState(5)
   const [lat, setLat] = useState(34)
   const [zoom, setZoom] = useState(2)

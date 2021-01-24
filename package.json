@@ -1,7 +1,13 @@
 {
   "name": "mapbox-react-hooks",
+  "author": "Matt Oliver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheeMattOliver/mapbox-react-hooks.git"
+  },
+  "license": "MIT",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
