@@ -12,6 +12,8 @@
 
 5. `localhost:3000` 🤙
 
+ ![](mapbox-react-hooks.gif)
+
 ### Using `useState`, `useEffect`, and `useRef`. 
 
 We can build functional components that let Mapbox handle the map logic, while React watches for state and data changes.
@@ -57,5 +59,4 @@ Create a ref to target with `useRef`, and assign it an initial value of `null`.
 
  ✨✨✨
 
- ![](mapbox-react-hooks.gif)
 
