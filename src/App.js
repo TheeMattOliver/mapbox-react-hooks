@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect, useRef } from 'react'
+import mapboxgl from 'mapbox-gl'
+import './style.css';
 
 function App() {
+
+  const [lng, setLng] = useState(5)
+  const [lat, setLat] = useState(34)
+  const [zoom, setZoom] = useState(2)
+
+  const mapNode = useRef(null)
+
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: mapNode.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      centerr: [lng, lat],
+      zoom: zoom
+    })
+
+    map.on('move', () => {
+      setLng(map.getCenter().lng.toFixed(4));
+      setLat(map.getCenter().lat.toFixed(4));
+      setZoom(map.getZoom().toFixed(2))
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <div className="sidebarStyle">
+          <h1>Hello mapbox</h1>
+          <h2>Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</h2>
+        </div>
+      </div>
+      <div ref={mapNode} className="mapContainer" />
     </div>
   );
 }
