@@ -38,7 +38,18 @@ With hooks, we can store use the `useState` and `useEffect` hooks instead, like 
   }, [])
 
 ```
+
 The [entry point to initialize a Mapbox map](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/#render-the-map) is through a single DOM element, which is typically provided in a React context through a statement in the render method.
 
-With functional components, we can use the `useRef` hook to target the current ref in the virtual DOM. `useRef` allows us to keep values around across the entire lifespan of the component, and grab the DOM nodes we need to target and make imperative changes to it -- like provide an entry point for a Mapbox map. ✨
+We're targeting the entry point for our map with a [ref](https://reactjs.org/docs/refs-and-the-dom.html#:~:text=Refs%20provide%20a%20way%20to,render%20it%20with%20new%20props.) -- `mapNode.current`. 
+
+Create a ref to target with `useRef`, and assign it an initial value of `null`. 
+
+```const mapNode = useRef(null)```
+
+`mapNode` becomes an object with a property of `.current`, which points to that DOM node.
+
+ `useRef` allows us to keep values around across the entire lifespan of the component, grab the DOM nodes we need to target and make imperative changes to it -- like provide an entry point for a Mapbox map. 
+
+ ✨✨✨
 
