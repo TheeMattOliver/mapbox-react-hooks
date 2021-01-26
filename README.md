@@ -58,5 +58,3 @@ Create a ref to target with `useRef`, and assign it an initial value of `null`.
  `useRef` allows us to keep values around across the entire lifespan of the component, grab the DOM nodes we need to target and make imperative changes to it -- like provide an entry point for a Mapbox map. 
 
  ✨✨✨
-
-
