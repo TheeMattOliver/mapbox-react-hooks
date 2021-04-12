@@ -14,7 +14,7 @@ function App() {
     const map = new mapboxgl.Map({
       container: mapNode.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      centerr: [lng, lat],
+      center: [lng, lat],
       zoom: zoom
     })
 
